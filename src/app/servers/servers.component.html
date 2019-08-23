@@ -3,6 +3,8 @@
     <div class="list-group">
       <a
       [routerLink]="['/servers', server.id]"
+      [queryParams]="{allowEdit: server.id === 1? '1' : '0'}"
+      fragment = "loading"
         class="list-group-item"
         *ngFor="let server of servers">
         {{ server.name }}
@@ -10,8 +12,8 @@
     </div>
   </div>
   <div class="col-xs-12 col-sm-4">
-      <button class = 'btb btn-primary' (click)="onButtonClick()">Click Me</button>
-    <app-edit-server></app-edit-server>
+      <!-- <button class = 'btb btn-primary' (click)="onButtonClick()">Click Me</button> -->
+    <router-outlet></router-outlet>
   </div>
 </div>
 

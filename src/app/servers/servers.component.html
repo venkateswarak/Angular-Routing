@@ -2,8 +2,7 @@
   <div class="col-xs-12 col-sm-4">
     <div class="list-group">
       <a
-      [routerLink]="['/servers', 5, 'edit']" routerLinkActive="router-link-active"
-        href="#"
+      [routerLink]="['/servers', server.id]"
         class="list-group-item"
         *ngFor="let server of servers">
         {{ server.name }}
@@ -13,8 +12,6 @@
   <div class="col-xs-12 col-sm-4">
       <button class = 'btb btn-primary' (click)="onButtonClick()">Click Me</button>
     <app-edit-server></app-edit-server>
-    <hr>
-    <app-server></app-server>
   </div>
 </div>
 
